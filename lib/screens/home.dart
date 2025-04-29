@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saporidiitalia/screens/highlights.dart';
 import 'package:saporidiitalia/themes/app_colors.dart';
 import 'package:saporidiitalia/components/main_drawer.dart';
 
@@ -62,6 +63,7 @@ class _HomeState extends State<Home> {
           });
         },
       ),
+      body: Highlights(),
     );
   }
 }
