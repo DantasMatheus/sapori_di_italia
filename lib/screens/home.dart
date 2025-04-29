@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saporidiitalia/screens/drinks.dart';
 import 'package:saporidiitalia/screens/highlights.dart';
 import 'package:saporidiitalia/screens/menu.dart';
 import 'package:saporidiitalia/themes/app_colors.dart';
@@ -15,7 +16,7 @@ class _HomeState extends State<Home> {
   int _currentPage = 0;
   @override
   Widget build(BuildContext context) {
-    final List<Widget> pages = [Highlights(), Menu()];
+    final List<Widget> pages = [Highlights(), Menu(), Drinks()];
     return Scaffold(
       appBar: AppBar(
         title: const Text("Sapori di Italia"),
