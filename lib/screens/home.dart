@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saporidiitalia/screens/checkout.dart';
 import 'package:saporidiitalia/screens/drinks.dart';
 import 'package:saporidiitalia/screens/highlights.dart';
 import 'package:saporidiitalia/screens/menu.dart';
@@ -35,7 +36,7 @@ class _HomeState extends State<Home> {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return const Home();
+                return const Checkout();
               },
             ),
           );

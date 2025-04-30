@@ -26,7 +26,12 @@ class _OrderItemState extends State<OrderItem> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Image(image: AssetImage(widget.imageURI), fit: BoxFit.cover),
+          Image(
+            height: 80,
+            width: 80,
+            image: AssetImage(widget.imageURI),
+            fit: BoxFit.cover,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Column(
