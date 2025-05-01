@@ -58,7 +58,7 @@ class PaymentTotal extends StatelessWidget {
             children: const <Widget>[
               Padding(
                 padding: EdgeInsets.only(right: 8.0),
-                child: Icon(Icons.account_balance_wallet),
+                child: Icon(Icons.account_balance_wallet, color: Colors.white),
               ),
               Text("Pedir", style: TextStyle(fontWeight: FontWeight.w500)),
             ],
