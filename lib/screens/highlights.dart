@@ -4,7 +4,6 @@ import 'package:saporidiitalia/components/highlight_item.dart';
 
 class Highlights extends StatelessWidget {
   const Highlights({super.key});
-  final List items = destaques;
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +21,52 @@ class Highlights extends StatelessWidget {
               ),
             ),
           ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) {
-              return HighlightItem(
-                imageURI: items[index]['image'],
-                itemTitle: items[index]['name'],
-                itemPrice: items[index]['price'],
-                itemDescription: items[index]['description'],
-              );
-            }, childCount: items.length),
-          ),
+          MediaQuery.of(context).orientation == Orientation.portrait
+              ? const _PortraitList()
+              : const _LandscapeList(),
         ],
+      ),
+    );
+  }
+}
+
+class _PortraitList extends StatelessWidget {
+  const _PortraitList();
+  final List items = destaques;
+  @override
+  Widget build(BuildContext context) {
+    return SliverList(
+      delegate: SliverChildBuilderDelegate((context, index) {
+        return HighlightItem(
+          imageURI: items[index]['image'],
+          itemTitle: items[index]['name'],
+          itemPrice: items[index]['price'],
+          itemDescription: items[index]['description'],
+        );
+      }, childCount: items.length),
+    );
+  }
+}
+
+class _LandscapeList extends StatelessWidget {
+  const _LandscapeList();
+  final List items = destaques;
+  @override
+  Widget build(BuildContext context) {
+    return SliverGrid(
+      delegate: SliverChildBuilderDelegate((context, index) {
+        return HighlightItem(
+          imageURI: items[index]['image'],
+          itemTitle: items[index]['name'],
+          itemPrice: items[index]['price'],
+          itemDescription: items[index]['description'],
+        );
+      }, childCount: items.length),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 8,
+        crossAxisSpacing: 8,
+        childAspectRatio: 1.17,
       ),
     );
   }
