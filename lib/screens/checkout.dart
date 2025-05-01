@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:saporidiitalia/cardapio.dart';
 import 'package:saporidiitalia/components/main_drawer.dart';
 import 'package:saporidiitalia/components/order_item.dart';
+import 'package:saporidiitalia/components/payment_method.dart';
+import 'package:saporidiitalia/components/payment_total.dart';
 
 class Checkout extends StatelessWidget {
   const Checkout({super.key});
@@ -43,6 +45,26 @@ class Checkout extends StatelessWidget {
                 );
               }, childCount: items.length),
             ),
+            const SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 8),
+                child: Text(
+                  "Pagamento",
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(child: PaymentMethod()),
+            const SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 8),
+                child: Text(
+                  "Confirmar",
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(child: PaymentTotal()),
           ],
         ),
       ),
